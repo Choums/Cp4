@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chaidel <chaidel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/28 15:45:42 by chaidel           #+#    #+#             */
-/*   Updated: 2022/12/01 12:09:59 by chaidel          ###   ########.fr       */
+/*   Created: 2022/12/01 14:02:28 by chaidel           #+#    #+#             */
+/*   Updated: 2022/12/01 14:08:03 by chaidel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/Dog.hpp"
+#include "../includes/WrongCat.hpp"
 
-Dog::Dog() : Animal("Dog")
+WrongCat::WrongCat() : WrongAnimal("WrongCat")
 {
-	std::cout << "[ A new Dog has joined the zoo ! ]" << std::endl;
+	std::cout << "[ A new WrongCat has joined the zoo ! ]" << std::endl;
 }
 
-
-Dog::Dog(Dog const& cpy)
+WrongCat::WrongCat(WrongCat const& cpy)
 {
 	this->_type = cpy._type;
 	std::cout << "[ A " << this->_type << " copied another ! ]" << std::endl;
 }
 
-Dog::~Dog()
+WrongCat::~WrongCat()
 {
-	std::cout << "[ A Dog has passed away ! ]" << std::endl;
+	std::cout << "[ A WrongCat has passed away ! ]" << std::endl;
 }
 
-void	Dog::makeSound()
+void	WrongCat::makeSound()
 {
-	std::cout << "Waouf ! Waouf ! Waouf !" << std::endl;
+	std::cout << "Psss ! Psss ! Psss !" << std::endl;
 }

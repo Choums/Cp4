@@ -6,7 +6,7 @@
 /*   By: chaidel <chaidel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 15:46:19 by chaidel           #+#    #+#             */
-/*   Updated: 2022/11/28 15:56:01 by chaidel          ###   ########.fr       */
+/*   Updated: 2022/12/01 14:32:19 by chaidel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,16 @@ class   Animal;
 class   Animal {
 	public:
 		Animal();
+		Animal(std::string type);
 		Animal(Animal const& cpy);
-		~Animal();
+		virtual ~Animal();
+
+		virtual void	makeSound();
 
 		Animal& operator=(Animal const& obj);
 
+			/*	Accessors */
+		std::string	getType() const;
 	protected:
-		std::string type;
+		std::string _type;
 };
-
-std::ostream&   operator<<(std::ostream& flux, Animal const& animal);

@@ -1,4 +1,4 @@
-NAME    = Clap
+NAME    = Animal
 OS		= $(shell uname)
 
 # directories
@@ -6,9 +6,17 @@ SRCDIR        =    ./src
 INCDIR        =    ./includes
 OBJDIR        =    ./obj
 
+HEADER		=	Animal.hpp\
+				Cat.hpp\
+				Dog.hpp
+
 # src / obj files
 SRC        =	main.cpp\
-				ClapTrap.cpp
+				Animal.cpp\
+				Cat.cpp\
+				Dog.cpp\
+				WrongAnimal.cpp\
+				WrongCat.cpp
 
 OBJ        = $(addprefix $(OBJDIR)/,$(SRC:.cpp=.o))
 
@@ -23,7 +31,7 @@ obj:
 		mkdir -p $(OBJDIR)
 
 
-$(OBJDIR)/%.o:	$(SRCDIR)/%.cpp
+$(OBJDIR)/%.o:	$(SRCDIR)/%.cpp	${INCDIR}
 				$(CC) $(CFLAGS) -I $(INCDIR) -o $@ -c $<
 
 

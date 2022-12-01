@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chaidel <chaidel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/28 15:46:22 by chaidel           #+#    #+#             */
-/*   Updated: 2022/12/01 13:13:38 by chaidel          ###   ########.fr       */
+/*   Created: 2022/12/01 14:01:52 by chaidel           #+#    #+#             */
+/*   Updated: 2022/12/01 14:07:33 by chaidel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include "./Animal.hpp"
+#include <iostream>
+#include "./WrongAnimal.hpp"
 
-class   Cat;
+class	WrongCat;
 
-class Cat : public Animal {
+class	WrongCat : public WrongAnimal {
 	public:
-		Cat();
-		Cat(Cat const& cpy);
-		~Cat();
-
-		virtual	void	makeSound();
+		WrongCat();
+		WrongCat(WrongCat const& cpy);
+		~WrongCat();
+		
+		void	makeSound();
 };

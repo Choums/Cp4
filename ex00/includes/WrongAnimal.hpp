@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chaidel <chaidel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/28 15:45:42 by chaidel           #+#    #+#             */
-/*   Updated: 2022/12/01 12:09:59 by chaidel          ###   ########.fr       */
+/*   Created: 2022/12/01 13:27:23 by chaidel           #+#    #+#             */
+/*   Updated: 2022/12/01 14:33:11 by chaidel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/Dog.hpp"
+#pragma once
 
-Dog::Dog() : Animal("Dog")
-{
-	std::cout << "[ A new Dog has joined the zoo ! ]" << std::endl;
-}
+#include <iostream>
 
+class WrongAnimal;
 
-Dog::Dog(Dog const& cpy)
-{
-	this->_type = cpy._type;
-	std::cout << "[ A " << this->_type << " copied another ! ]" << std::endl;
-}
+class	WrongAnimal {
+	public:
+		WrongAnimal();
+		WrongAnimal(std::string type);
+		WrongAnimal(WrongAnimal const& cpy);
+		virtual ~WrongAnimal();
 
-Dog::~Dog()
-{
-	std::cout << "[ A Dog has passed away ! ]" << std::endl;
-}
+		void	makeSound();
 
-void	Dog::makeSound()
-{
-	std::cout << "Waouf ! Waouf ! Waouf !" << std::endl;
-}
+		WrongAnimal&	operator=(WrongAnimal const& obj);
+		std::string		getType() const;
+	protected:
+		std::string	_type;
+};
