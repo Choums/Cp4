@@ -6,7 +6,7 @@
 /*   By: chaidel <chaidel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 15:45:48 by chaidel           #+#    #+#             */
-/*   Updated: 2022/12/01 14:34:21 by chaidel          ###   ########.fr       */
+/*   Updated: 2022/12/04 15:05:12 by chaidel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,28 +18,14 @@
 
 int	main(void)
 {
-	Animal* meta = new Animal();
-	Animal* j = new Dog();
-	Animal* i = new Cat();
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
+	std::cout << "-----" << std::endl;
 
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	i->makeSound(); //will output the cat sound!
-	j->makeSound();
-	meta->makeSound();
+	j->getThought(5);
 
-	delete	meta;
-	delete	j;
-	delete	i;
-	std::cout << std::endl << "-----" << std::endl;
-
-	WrongAnimal *w = new WrongCat();
-	WrongCat	*c = new WrongCat();
-
-	w->makeSound();
-	w->makeSound();
-
-	delete	w;
-	delete	c;
+	std::cout << "-----" << std::endl;
+	delete j;//should not create a leak
+	delete i;
 	return (0);
 }

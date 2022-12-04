@@ -6,7 +6,7 @@
 /*   By: chaidel <chaidel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 15:45:45 by chaidel           #+#    #+#             */
-/*   Updated: 2022/12/01 13:13:47 by chaidel          ###   ########.fr       */
+/*   Updated: 2022/12/04 14:57:54 by chaidel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 Cat::Cat() : Animal("Cat")
 {
+	this->_lightbulb = new Brain();
 	std::cout << "[ A new Cat has joined the zoo ! ]" << std::endl;
 }
 
@@ -25,10 +26,16 @@ Cat::Cat(Cat const& cpy)
 
 Cat::~Cat()
 {
+	delete this->_lightbulb;
 	std::cout << "[ A Cat has passed away ! ]" << std::endl;
 }
 
 void	Cat::makeSound()
 {
 	std::cout << "Meow ! Meow ! Meow !" << std::endl;
+}
+
+void	Cat::getThought() const
+{
+	std::cout << this->_lightbulb->getIdeas(rand() % 100);
 }

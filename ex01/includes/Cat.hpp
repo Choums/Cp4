@@ -6,13 +6,14 @@
 /*   By: chaidel <chaidel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 15:46:22 by chaidel           #+#    #+#             */
-/*   Updated: 2022/12/01 13:13:38 by chaidel          ###   ########.fr       */
+/*   Updated: 2022/12/04 14:52:40 by chaidel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include "./Animal.hpp"
+#include "./Brain.hpp"
 
 class   Cat;
 
@@ -23,4 +24,8 @@ class Cat : public Animal {
 		~Cat();
 
 		virtual	void	makeSound();
+			/*	Accessors */
+		void	getThought() const;
+	private:
+		Brain	*_lightbulb;
 };

@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chaidel <chaidel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/28 15:46:25 by chaidel           #+#    #+#             */
-/*   Updated: 2022/12/04 15:03:24 by chaidel          ###   ########.fr       */
+/*   Created: 2022/12/04 12:46:18 by chaidel           #+#    #+#             */
+/*   Updated: 2022/12/04 14:58:35 by chaidel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include "./Animal.hpp"
-#include "./Brain.hpp"
+#include <iostream>
+#include <cstdlib>
 
-class	Dog;
+class Brain;
 
-class	Dog : public Animal {
+class Brain {
 	public:
-		Dog();
-		Dog(Dog const& cpy);
-		~Dog();
+			/*	Constructors/Destructor */
+		Brain();
+		Brain(Brain const& cpy);
+		virtual ~Brain();
 
-		virtual	void	makeSound();
-		void	getThought() const;
+			/*	Assignement Operator Overload */
+		Brain&	operator=(Brain const& obj);
+
+			/*	Accessors */
+		std::string	getIdeas(int index) const;
 	private:
-		Brain	*_lightbulb;
+		std::string _ideas[100];
 };

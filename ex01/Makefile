@@ -1,4 +1,4 @@
-NAME    = Animal
+NAME    = Brain
 OS		= $(shell uname)
 
 # directories
@@ -8,7 +8,8 @@ OBJDIR        =    ./obj
 
 HEADER		=	Animal.hpp\
 				Cat.hpp\
-				Dog.hpp
+				Dog.hpp\
+				Brain.hpp
 
 # src / obj files
 SRC        =	main.cpp\
@@ -16,7 +17,8 @@ SRC        =	main.cpp\
 				Cat.cpp\
 				Dog.cpp\
 				WrongAnimal.cpp\
-				WrongCat.cpp
+				WrongCat.cpp\
+				Brain.cpp
 
 OBJ        = $(addprefix $(OBJDIR)/,$(SRC:.cpp=.o))
 
