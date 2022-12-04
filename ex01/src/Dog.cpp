@@ -6,7 +6,7 @@
 /*   By: chaidel <chaidel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 15:45:42 by chaidel           #+#    #+#             */
-/*   Updated: 2022/12/04 16:49:25 by chaidel          ###   ########.fr       */
+/*   Updated: 2022/12/04 18:32:46 by chaidel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,10 @@ Dog::Dog() : Animal("Dog")
 Dog::Dog(Dog const& cpy)
 {
 	if (this != &cpy)
+	{
 		this->_type = cpy._type;
+		this->_lightbulb = new Brain(*cpy._lightbulb);
+	}
 	std::cout << "[ A " << this->_type << " copied another ! ]" << std::endl;
 }
 
@@ -35,6 +38,17 @@ Dog::~Dog()
 void	Dog::makeSound()
 {
 	std::cout << "Waouf ! Waouf ! Waouf !" << std::endl;
+}
+
+Dog&	Dog::operator=(Dog const& obj)
+{
+	std::cout << "Copy assignment operator called" << std::endl;
+	if (this != &obj)
+	{
+		this->_type = obj._type;
+		this->_lightbulb = new Brain(*obj._lightbulb);
+	}
+	return (*this);
 }
 
 void	Dog::getThought() const

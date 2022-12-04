@@ -6,7 +6,7 @@
 /*   By: chaidel <chaidel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 15:46:22 by chaidel           #+#    #+#             */
-/*   Updated: 2022/12/04 16:30:14 by chaidel          ###   ########.fr       */
+/*   Updated: 2022/12/04 18:11:36 by chaidel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ class Cat : public Animal {
 		virtual ~Cat();
 
 		virtual	void	makeSound();
+			/*	Assignement Operator Overload */
+		Cat&	operator=(Cat const& obj);
 			/*	Accessors */
 		void	getThought() const;
 	private:

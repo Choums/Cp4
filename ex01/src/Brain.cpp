@@ -6,7 +6,7 @@
 /*   By: chaidel <chaidel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 12:48:19 by chaidel           #+#    #+#             */
-/*   Updated: 2022/12/04 16:26:21 by chaidel          ###   ########.fr       */
+/*   Updated: 2022/12/04 17:53:54 by chaidel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Brain::Brain()
 {
-	srand(time(NULL));
+	srand(time(0));
 	std::string	ideas[] = { "Eat",
 							"Sleep",
 							"Play",
