@@ -6,7 +6,7 @@
 /*   By: chaidel <chaidel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 15:45:45 by chaidel           #+#    #+#             */
-/*   Updated: 2022/12/04 14:57:54 by chaidel          ###   ########.fr       */
+/*   Updated: 2022/12/04 16:21:10 by chaidel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ Cat::Cat() : Animal("Cat")
 
 Cat::Cat(Cat const& cpy)
 {
-	this->_type = cpy._type;
+	if (this != &cpy)
+		this->_type = cpy._type;
 	std::cout << "[ A " << this->_type << " copied another ! ]" << std::endl;
 }
 
@@ -37,5 +38,6 @@ void	Cat::makeSound()
 
 void	Cat::getThought() const
 {
-	std::cout << this->_lightbulb->getIdeas(rand() % 100);
+	srand(time(NULL));
+	std::cout << this->_lightbulb->getIdeas((rand() % 100)) << std::endl;
 }

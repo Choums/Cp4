@@ -6,7 +6,7 @@
 /*   By: chaidel <chaidel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 12:48:19 by chaidel           #+#    #+#             */
-/*   Updated: 2022/12/04 14:59:59 by chaidel          ###   ########.fr       */
+/*   Updated: 2022/12/04 16:26:21 by chaidel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 Brain::Brain()
 {
+	srand(time(NULL));
 	std::string	ideas[] = { "Eat",
 							"Sleep",
 							"Play",
@@ -43,7 +44,7 @@ Brain&	Brain::operator=(Brain const& obj)
 	return (*this);
 }
 
-std::string	Brain::getIdeas(int index) const
+std::string	const& Brain::getIdeas(int index) const
 {
 	return (this->_ideas[index]);
 }

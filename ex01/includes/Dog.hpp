@@ -6,7 +6,7 @@
 /*   By: chaidel <chaidel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 15:46:25 by chaidel           #+#    #+#             */
-/*   Updated: 2022/12/04 15:03:24 by chaidel          ###   ########.fr       */
+/*   Updated: 2022/12/04 16:30:18 by chaidel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class	Dog : public Animal {
 	public:
 		Dog();
 		Dog(Dog const& cpy);
-		~Dog();
+		virtual ~Dog();
 
 		virtual	void	makeSound();
 		void	getThought() const;

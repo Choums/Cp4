@@ -6,7 +6,7 @@
 /*   By: chaidel <chaidel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 15:45:48 by chaidel           #+#    #+#             */
-/*   Updated: 2022/12/04 15:05:12 by chaidel          ###   ########.fr       */
+/*   Updated: 2022/12/04 16:48:46 by chaidel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,30 @@
 
 int	main(void)
 {
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
+	Animal* j = new Cat();
 	std::cout << "-----" << std::endl;
-
-	j->getThought(5);
-
+	((Cat *)j)->getThought();
 	std::cout << "-----" << std::endl;
 	delete j;//should not create a leak
-	delete i;
+	std::cout << "-----" << std::endl << std::endl;
+
+	Animal*	animaux[6];
+	for (int i(0); i < 6; i++)
+	{
+		if (i < 3)
+			animaux[i] = new Dog();
+		else animaux[i] = new Cat();
+	}
+	std::cout << "-----" << std::endl;
+	for (int i(0); i < 6; i++)
+	{
+		if (i < 3)
+			((Dog *)animaux[i])->getThought();
+		else
+			((Cat *)animaux[i])->getThought();
+	}
+	std::cout << "-----" << std::endl;
+	for (int i(0);i < 6; i++)
+		delete animaux[i];
 	return (0);
 }

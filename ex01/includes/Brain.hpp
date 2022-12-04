@@ -6,7 +6,7 @@
 /*   By: chaidel <chaidel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 12:46:18 by chaidel           #+#    #+#             */
-/*   Updated: 2022/12/04 14:58:35 by chaidel          ###   ########.fr       */
+/*   Updated: 2022/12/04 16:06:17 by chaidel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class Brain {
 		Brain&	operator=(Brain const& obj);
 
 			/*	Accessors */
-		std::string	getIdeas(int index) const;
+		std::string const&	getIdeas(int index) const;
 	private:
 		std::string _ideas[100];
 };

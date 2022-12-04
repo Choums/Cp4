@@ -6,7 +6,7 @@
 /*   By: chaidel <chaidel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 15:45:42 by chaidel           #+#    #+#             */
-/*   Updated: 2022/12/04 15:02:55 by chaidel          ###   ########.fr       */
+/*   Updated: 2022/12/04 16:49:25 by chaidel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ Dog::Dog() : Animal("Dog")
 
 Dog::Dog(Dog const& cpy)
 {
-	this->_type = cpy._type;
+	if (this != &cpy)
+		this->_type = cpy._type;
 	std::cout << "[ A " << this->_type << " copied another ! ]" << std::endl;
 }
 
@@ -38,5 +39,5 @@ void	Dog::makeSound()
 
 void	Dog::getThought() const
 {
-	std::cout << this->_lightbulb->getIdeas(rand() % 100);
+	std::cout << this->_lightbulb->getIdeas(rand() % 100) << std::endl;
 }
