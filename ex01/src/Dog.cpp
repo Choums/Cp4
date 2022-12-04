@@ -6,7 +6,7 @@
 /*   By: chaidel <chaidel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 15:45:42 by chaidel           #+#    #+#             */
-/*   Updated: 2022/12/04 18:32:46 by chaidel          ###   ########.fr       */
+/*   Updated: 2022/12/04 18:44:02 by chaidel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	Dog::makeSound()
 
 Dog&	Dog::operator=(Dog const& obj)
 {
-	std::cout << "Copy assignment operator called" << std::endl;
+	std::cout << "[ Copy assignment operator called ]" << std::endl;
 	if (this != &obj)
 	{
 		this->_type = obj._type;

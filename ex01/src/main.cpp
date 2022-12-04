@@ -6,7 +6,7 @@
 /*   By: chaidel <chaidel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 15:45:48 by chaidel           #+#    #+#             */
-/*   Updated: 2022/12/04 18:30:45 by chaidel          ###   ########.fr       */
+/*   Updated: 2022/12/04 18:57:02 by chaidel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,13 @@ int	main(void)
 	cpy.getThought();
 	std::cout << "-----" << std::endl;
 	std::cout << "+++ Assignement +++" << std::endl;
-	Dog doggy = cpy;
-	std::cout << doggy.getType() << std::endl;
-	doggy.getThought();
+	Dog *doggy = new Dog();
+	doggy = &cpy;
+	std::cout << doggy->getType() << std::endl;
+	doggy->getThought();
+	std::cout << "-----" << std::endl;
+	delete cpy;
+	// delete doggy;
 	std::cout << "-----" << std::endl;
 	for (int i(0);i < 6; i++)
 		delete animaux[i];

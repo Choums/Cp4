@@ -6,7 +6,7 @@
 /*   By: chaidel <chaidel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 15:45:45 by chaidel           #+#    #+#             */
-/*   Updated: 2022/12/04 18:13:26 by chaidel          ###   ########.fr       */
+/*   Updated: 2022/12/04 18:44:11 by chaidel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ void	Cat::makeSound()
 
 Cat&	Cat::operator=(Cat const& obj)
 {
+	std::cout << "[ Copy assignment operator called ]" << std::endl;
 	if (this != &obj)
 	{
 		this->_type = obj._type;
