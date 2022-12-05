@@ -6,13 +6,13 @@
 /*   By: chaidel <chaidel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 15:45:45 by chaidel           #+#    #+#             */
-/*   Updated: 2022/12/05 11:28:18 by chaidel          ###   ########.fr       */
+/*   Updated: 2022/12/05 11:44:24 by chaidel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Cat.hpp"
 
-Cat::Cat() : Animal("Cat")
+Cat::Cat() : AAnimal("Cat")
 {
 	this->_lightbulb = new Brain();
 	std::cout << "[ A new Cat ! ]" << std::endl;

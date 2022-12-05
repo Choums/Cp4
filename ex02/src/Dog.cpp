@@ -1,45 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chaidel <chaidel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/28 15:45:45 by chaidel           #+#    #+#             */
-/*   Updated: 2022/12/05 11:28:18 by chaidel          ###   ########.fr       */
+/*   Created: 2022/11/28 15:45:42 by chaidel           #+#    #+#             */
+/*   Updated: 2022/12/05 11:44:24 by chaidel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/Cat.hpp"
+#include "../includes/Dog.hpp"
 
-Cat::Cat() : Animal("Cat")
+Dog::Dog() : AAnimal("Dog")
 {
 	this->_lightbulb = new Brain();
-	std::cout << "[ A new Cat ! ]" << std::endl;
+	std::cout << "[ A new Dog ! ]" << std::endl;
 }
 
-Cat::Cat(Cat const& cpy)
+
+Dog::Dog(Dog const& cpy)
 {
 	if (this != &cpy)
 	{
 		this->_type = cpy._type;
 		this->_lightbulb = new Brain(*cpy._lightbulb);
 	}
-	std::cout << "[ A Kitty copied another ! ]" << std::endl;
+	std::cout << "[ A Doggy copied another ! ]" << std::endl;
 }
 
-Cat::~Cat()
+Dog::~Dog()
 {
 	delete this->_lightbulb;
-	std::cout << "[ A Kitty has passed away ! ]" << std::endl;
+	std::cout << "[ A Doggy has passed away ! ]" << std::endl;
 }
 
-void	Cat::makeSound()
+void	Dog::makeSound()
 {
-	std::cout << "Meow ! Meow ! Meow !" << std::endl;
+	std::cout << "Waouf ! Waouf ! Waouf !" << std::endl;
 }
 
-Cat&	Cat::operator=(Cat const& obj)
+Dog&	Dog::operator=(Dog const& obj)
 {
 	std::cout << "[ Copy assignment operator called ]" << std::endl;
 	if (this != &obj)
@@ -51,8 +52,7 @@ Cat&	Cat::operator=(Cat const& obj)
 	return (*this);
 }
 
-void	Cat::getThought() const
+void	Dog::getThought() const
 {
-	std::srand(time(0));
-	std::cout << this->_lightbulb->getIdeas((rand() % 100)) << std::endl;
+	std::cout << this->_lightbulb->getIdeas(rand() % 100) << std::endl;
 }
