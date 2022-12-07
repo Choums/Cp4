@@ -6,16 +6,20 @@
 /*   By: chaidel <chaidel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 13:14:18 by chaidel           #+#    #+#             */
-/*   Updated: 2022/12/05 17:05:12 by chaidel          ###   ########.fr       */
+/*   Updated: 2022/12/07 12:20:43 by chaidel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
+#define RED		"\033[1;31m"
+#define GREEN	"\033[1;32m"
+#define END		"\033[0m"
+
 #include <iostream>
 #include "./ICharacter.hpp"
 
-class AMateria;
+class ICharacter;
 
 class AMateria {
 	public:

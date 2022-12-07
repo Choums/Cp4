@@ -6,7 +6,7 @@
 /*   By: chaidel <chaidel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 16:18:04 by chaidel           #+#    #+#             */
-/*   Updated: 2022/12/05 17:07:47 by chaidel          ###   ########.fr       */
+/*   Updated: 2022/12/07 13:04:21 by chaidel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,17 @@
 
 Cure::Cure() : AMateria("cure")
 {
-	std:: cout << "[ Cure Materia has been created ! ]" << std::endl;
+	std:: cout << GREEN << "[ Cure Materia has been created ! ]" << END << std::endl;
 }
 
 Cure::Cure(Cure const& cpy) : AMateria(cpy.getType())
 {
-	std::cout << " [ A Cure Materia has been copied ! ]" << std::endl;
+	std::cout << GREEN << "[ A Cure Materia has been copied ! ]" << END << std::endl;
 }
 
 Cure::~Cure()
 {
-	std::cout << " [ Cure Materia has been destroyed ! ]" << std::endl;
+	std::cout << RED << "[ Cure Materia has been destroyed ! ]" << END << std::endl;
 }
 
 	/*	Methods */

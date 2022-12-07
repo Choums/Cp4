@@ -1,4 +1,4 @@
-NAME    = Interface
+NAME    = Materia
 OS		= $(shell uname)
 
 # directories
@@ -6,11 +6,21 @@ SRCDIR        =    ./src
 INCDIR        =    ./includes
 OBJDIR        =    ./obj
 
-HEADER		=	AMateria.hpp
+HEADER		=	AMateria.hpp\
+				Cure.hpp\
+				Ice.hpp\
+				ICharacter.hpp\
+				Character.hpp\
+				IMateriaSource.hpp\
+				MateriaSource.hpp
 
 # src / obj files
 SRC        =	main.cpp\
-				AMateria.cpp
+				AMateria.cpp\
+				Character.cpp\
+				Cure.cpp\
+				Ice.cpp\
+				MateriaSource.cpp
 				
 
 OBJ        = $(addprefix $(OBJDIR)/,$(SRC:.cpp=.o))

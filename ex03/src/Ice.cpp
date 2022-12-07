@@ -6,7 +6,7 @@
 /*   By: chaidel <chaidel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 16:30:49 by chaidel           #+#    #+#             */
-/*   Updated: 2022/12/05 17:16:10 by chaidel          ###   ########.fr       */
+/*   Updated: 2022/12/07 13:04:16 by chaidel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,17 @@
 	/*  Constructors/Destructor */
 Ice::Ice() : AMateria("ice")
 {
-	std:: cout << "[ Ice Materia has been created ! ]" << std::endl;
+	std:: cout << GREEN << "[ Ice Materia has been created ! ]" << END << std::endl;
 }
 
 Ice::Ice(Ice const& cpy) : AMateria(cpy.getType())
 {
-	std::cout << " [ An Ice Materia has been copied ! ]" << std::endl;
+	std::cout << GREEN << "[ An Ice Materia has been copied ! ]" << END << std::endl;
 }
 
 Ice::~Ice()
 {
-	std::cout << " [ Ice Materia has been destroyed ! ]" << std::endl;
+	std::cout << RED << "[ Ice Materia has been destroyed ! ]" << END << std::endl;
 }
 
 	/*	Methods */
@@ -37,11 +37,11 @@ AMateria*	Ice::clone() const
 
 void	Ice::use(ICharacter& target)
 {
-	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::cout;
+	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
 }
 
 	/*  Assignment Operator Overload */
-Cure&	operator=(Cure const& obj)
+Ice&	Ice::operator=(Ice const& obj)
 {
 	if (this != &obj)
 		this->_type = obj.getType();
